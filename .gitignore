@@ -20,4 +20,8 @@ buildNumber.properties
 
 .idea
 
+*.iws
+*.iml
+*.ipr
+
 **/.gitignore

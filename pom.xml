@@ -12,9 +12,12 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>common</module>
         <module>shop-product</module>
         <module>shop-order</module>
         <module>shop-user</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
     </modules>
 
 
