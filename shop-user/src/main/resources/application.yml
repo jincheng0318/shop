@@ -4,6 +4,15 @@ spring:
     url: jdbc:mysql://localhost:3306/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: jincheng0318
+
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  application:
+    name: shop-user
 #mybatis-plus:
 #  config-location: classpath*:/mapper/**/*.xml
 

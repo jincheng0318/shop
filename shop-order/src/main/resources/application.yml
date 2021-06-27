@@ -6,8 +6,16 @@ spring:
     password: jincheng0318
 #mybatis-plus:
 #  config-location: classpath*:/mapper/**/*.xml
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  application:
+    name: shop-order
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
 server:
   port: 13000
+

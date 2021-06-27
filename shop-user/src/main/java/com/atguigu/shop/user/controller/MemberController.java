@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Map;
 
 import com.atguigu.common.utils.PageUtils;
+import com.atguigu.shop.user.entity.UserEntity;
+import com.atguigu.shop.user.feign.ProductViewFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +33,18 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    @Autowired
+    ProductViewFeignService productViewFeignService;//注入这个远程调用类的的对象
+
+    @RequestMapping("/products")
+    public R test(){
+        MemberEntity memberEntity=new MemberEntity();
+        memberEntity.setNickname("张三");
+
+        R list=productViewFeignService.listWithTree();
+
+        return R.ok().put("member",memberEntity).put("products",list.get("product"));
+    }
     /**
      * 列表
      */
